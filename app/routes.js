@@ -7,7 +7,6 @@ module.exports = function(app, restcalls){
         res.send('<h1>Hello, Welcome to slack app rest api.</h1>');
     });
 
-    // convert csv to json
     app.post('/api/v1/yodaspeak', restcalls.convertToYodaSpeech);
 
     app.get('*', function(req, res){
