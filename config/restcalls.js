@@ -32,7 +32,7 @@ exports.convertToYodaSpeech = function(req, res){
 			.header("X-Mashape-Key", "o0Sy70Enmumshakwy0gkKjIlx08np1VyGlujsncltKgF9lInmP")
 			.header("Accept", "text/plain")
 			.end(function (result) {
-				console.log(result.status, result.headers, result.body);
+				res.send(result);
 			});
 
 	}
