@@ -8,7 +8,7 @@ module.exports = function(app, restcalls){
     });
 
     // convert csv to json
-    app.get('/api/v1/yodaspeak', restcalls.convertToYodaSpeech);
+    app.post('/api/v1/yodaspeak', restcalls.convertToYodaSpeech);
 
     app.get('*', function(req, res){
         res.send('<h5>This is a 404 page</h5>');
