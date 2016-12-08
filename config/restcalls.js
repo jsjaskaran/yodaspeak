@@ -13,6 +13,7 @@ exports.convertToYodaSpeech = function(req, res){
 
 		var text = req.body.text;
 		console.log(text);
+		text = text.replace(' ', '+');
 
 		/*request({
 			headers: {
@@ -25,7 +26,9 @@ exports.convertToYodaSpeech = function(req, res){
 			res.json({status: 'success', data: 'All done, working'});
 		})*/
 
-		unirest.get("https://yoda.p.mashape.com/yoda?sentence=You+will+learn+how+to+speak+like+me+someday.++Oh+wait.")
+		var url = "https://yoda.p.mashape.com/yoda?sentence="+text;
+
+		unirest.get(url)
 			.header("X-Mashape-Key", "o0Sy70Enmumshakwy0gkKjIlx08np1VyGlujsncltKgF9lInmP")
 			.header("Accept", "text/plain")
 			.end(function (result) {
